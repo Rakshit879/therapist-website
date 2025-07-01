@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../lib/fontawesome";
 import "./globals.css";
 
 import { Libre_Baskerville } from 'next/font/google'
