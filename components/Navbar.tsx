@@ -13,8 +13,9 @@ export function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > window.innerHeight - 100);
+            setScrolled(window.scrollY > 50);
         };
+        // window.innerHeight - 100
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -53,17 +54,17 @@ export function Navbar() {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-500 ease-in-out
-          ${showBg ? 'bg-white/60 backdrop-blur-md shadow-md' : 'bg-transparent'}
+          ${showBg ? ' backdrop-blur-[3px] shadow-md' : 'bg-transparent'}
         `}
             >
                 <div className="container mx-auto flex justify-between items-center">
                     <div>
                         <Link href="#Hero" className={`text-lg md:text-2xl font-medium transition-colors duration-300 ${textColorClass}`}>
                             <span className="flex items-center space-x-2">
-                                <Image src="/Images/Logo.png" alt="Dr. Serena Blake logo" width={60} height={60} />
+                                <Image src="/Images/Logo.png" alt="Dr. Serena Blake logo" width={70} height={70} />
                                 <span className="flex flex-col group cursor-pointer">
-                                    <h2 className="text-gray-700 group-hover:underline">Dr. Serena Blake,</h2>
-                                    <h2 className="text-gray-700 group-hover:underline">PsyD (Clinical Psychologist)</h2>
+                                    <h2 className="text-gray-800  group-hover:underline">Dr. Serena Blake,</h2>
+                                    <h2 className="text-gray-800 group-hover:underline">PsyD (Clinical Psychologist)</h2>
                                 </span>
                             </span>
                         </Link>
