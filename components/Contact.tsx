@@ -94,7 +94,7 @@ export default function ContactPage() {
             </p>
 
             <Image
-              src="/images/ContactImage.jpg"
+              src="/Images/ContactImage.jpg"
               alt="Contact"
               width={800}
               height={800}

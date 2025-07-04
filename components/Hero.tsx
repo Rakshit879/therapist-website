@@ -17,9 +17,10 @@ export function Hero() {
         <video
           autoPlay
           loop
+          preload="auto"
           muted
           playsInline
-          className="object-cover w-full h-full opacity-90"
+          className="object-cover w-full h-full opacity-90 "
         >
           <source src="/Videos/HeroVideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
