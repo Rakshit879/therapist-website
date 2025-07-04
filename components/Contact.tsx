@@ -7,8 +7,25 @@ import { faUserDoctor, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-i
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+  preferredTime: string;
+  agree: boolean;
+}
+
+interface ContactFormProps {
+  formData: FormData;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  errors: { [key: string]: string };
+  handleSubmit: (e: React.FormEvent) => void;
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
@@ -158,12 +175,9 @@ export default function ContactPage() {
   );
 }
 
-
-
-
-function ContactForm({ formData, setFormData, errors, handleSubmit }: any) {
+function ContactForm({ formData, setFormData, errors, handleSubmit }: ContactFormProps) {
   return (
-    <form  method="POST" className="space-y-8" onSubmit={handleSubmit}>
+    <form method="POST" className="space-y-8" onSubmit={handleSubmit}>
       <div>
         <p className="text-sm text-slate-700 mb-1">Name (required)</p>
         <div className="grid text-sm grid-cols-2 gap-4">
