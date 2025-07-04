@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserDoctor, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -55,11 +57,19 @@ export default function ContactPage() {
     }
   };
 
+  const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: infoRef, inView: infoInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
   return (
     <main id="Contact" className="min-h-screen bg-gradient-to-b from-[#e0f2fe] via-[#f0f9ff] to-[#dbeafe]">
       <section className="pt-32 px-4 pb-16">
-        <div className="container mx-auto bg-white bg-opacity-90 rounded-3xl shadow-xl p-8">
-          {/* Small devices layout */}
+        <motion.div
+          ref={contactRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={contactInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="container mx-auto bg-white bg-opacity-90 rounded-3xl shadow-xl p-8"
+        >
           <div className="md:hidden flex flex-col gap-10">
             <h1 className="text-4xl font-semibold text-indigo-900">Contact Us</h1>
             <p className="text-slate-700 text-lg">
@@ -82,7 +92,6 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Medium and larger devices layout */}
           <div className="hidden md:grid md:grid-cols-2 gap-16 items-start">
             <div>
               <h1 className="text-5xl md:text-6xl font-semibold text-indigo-900 mb-6">
@@ -110,11 +119,16 @@ export default function ContactPage() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Contact Info */}
-      <section className="px-4 pb-16 pt-7">
+      <motion.section
+        ref={infoRef}
+        initial={{ opacity: 0, y: 40 }}
+        animate={infoInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="px-4 pb-16 pt-7"
+      >
         <div className="container mx-auto bg-white/90 py-12 px-6 mt-20 rounded-3xl shadow-lg">
           <h2 className="text-3xl font-bold text-center mb-12 text-indigo-900">Get in Touch!</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
@@ -139,12 +153,14 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }
 
-// Contact form extracted for reuse
+
+
+
 function ContactForm({ formData, setFormData, errors, handleSubmit }: any) {
   return (
     <form  method="POST" className="space-y-8" onSubmit={handleSubmit}>

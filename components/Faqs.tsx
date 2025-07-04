@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const faqs = [
   {
@@ -30,19 +31,38 @@ export default function FAQPage() {
     });
   };
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <section
       id="Faqs"
+      ref={ref}
       className="min-h-screen bg-gradient-to-b from-[#e0f2fe] to-[#f1f5f9] flex flex-col items-center justify-center py-32 px-4"
     >
-      <h1 className="text-3xl md:text-4xl font-semibold text-slate-800 mb-16">
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-3xl md:text-4xl font-semibold text-slate-800 mb-16"
+      >
         Frequently Asked Questions
-      </h1>
+      </motion.h1>
 
-      <div className="md:px-10 w-full  space-y-2">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        className="md:px-10 w-full space-y-2"
+      >
         {faqs.map((faq, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: index * 0.15 }}
             className="border-b border-slate-300 transition duration-300 bg-white/70 rounded-xl shadow-sm"
           >
             <button
@@ -81,9 +101,9 @@ export default function FAQPage() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
