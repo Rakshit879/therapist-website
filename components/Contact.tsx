@@ -56,7 +56,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#e0f2fe] via-[#f0f9ff] to-[#dbeafe]">
+    <main id="Contact" className="min-h-screen bg-gradient-to-b from-[#e0f2fe] via-[#f0f9ff] to-[#dbeafe]">
       <section className="pt-32 px-4 pb-16">
         <div className="container mx-auto bg-white bg-opacity-90 rounded-3xl shadow-xl p-8">
           {/* Small devices layout */}
@@ -147,7 +147,7 @@ export default function ContactPage() {
 // Contact form extracted for reuse
 function ContactForm({ formData, setFormData, errors, handleSubmit }: any) {
   return (
-    <form method="POST" className="space-y-8" onSubmit={handleSubmit}>
+    <form  method="POST" className="space-y-8" onSubmit={handleSubmit}>
       <div>
         <p className="text-sm text-slate-700 mb-1">Name (required)</p>
         <div className="grid text-sm grid-cols-2 gap-4">
