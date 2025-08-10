@@ -51,22 +51,20 @@ export function Navbar() {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-500 ease-in-out
-                ${scrolled ? 'md:backdrop-blur-[3px] md:shadow-md' : 'bg-transparent'}
+                ${scrolled ? 'backdrop-blur-[3px] shadow-md bg-white/80' : 'bg-transparent md:bg-transparent'}
             `}
             >
                 <div className="container mx-auto flex justify-between items-center">
                     {/* Logo and Title */}
-                    <div
-                        className={`transition-opacity duration-300 
-                          ${scrolled ? 'opacity-0 md:opacity-100' : 'opacity-100'}`}
-                    >
+                    <div className="transition-opacity duration-300 opacity-100">
+
                         <Link
                             href="#Hero"
                             className={`text-lg md:text-2xl font-medium transition-colors duration-300 ${textColorClass}`}
                         >
                             <span className="flex items-center space-x-2">
                                 <Image src="/Images/Logo.png" alt="Dr. Serena Blake logo" width={70} height={70} />
-                                <span className="flex flex-col group cursor-pointer">
+                                <span className="text-lg  md:text-2xl  md:flex flex-col group cursor-pointer">
                                     <h2 className="text-gray-800 group-hover:underline">Dr. Serena Blake,</h2>
                                     <h2 className="text-gray-800 group-hover:underline">PsyD (Clinical Psychologist)</h2>
                                 </span>
@@ -95,7 +93,7 @@ export function Navbar() {
 
             {/* Mobile Sidebar */}
             <div
-                className={`fixed top-0 right-0 h-full w-64 bg-white/30 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out
+                className={`fixed top-0 right-0 h-full w-64 bg-white/90 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out
                 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}
             `}
             >
@@ -119,7 +117,7 @@ export function Navbar() {
             {/* Translucent Backdrop */}
             {menuOpen && (
                 <div
-                    className="fixed inset-0 z-30 bg-opacity-30 backdrop-blur-sm"
+                    className="fixed inset-0 z-30 bg-black/30 backdrop-blur-sm"
                     onClick={() => setMenuOpen(false)}
                 ></div>
             )}

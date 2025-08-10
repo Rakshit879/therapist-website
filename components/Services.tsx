@@ -59,9 +59,9 @@ export default function Services() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <h3 className="font-medium leading-relaxed mb-4 text-xl sm:text-2xl text-[#1e293b] hover:text-[#334155] transition-colors duration-300">
+              <h1 className="font-medium leading-relaxed mb-4 text-xl sm:text-2xl text-[#1e293b] hover:text-[#334155] transition-colors duration-300">
                 {area.title}
-              </h3>
+              </h1>
               <p className="text-sm leading-loose font-light text-[#475569] max-w-xs">
                 {area.description}
               </p>

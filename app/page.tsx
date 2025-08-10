@@ -8,12 +8,6 @@ import StatSection from "@/components/StatSection";
 import RatesSection from "@/components/RatesSection";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Your Site Title",
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
 
 
 export default function Home() {

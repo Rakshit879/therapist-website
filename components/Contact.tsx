@@ -88,7 +88,7 @@ export default function ContactPage() {
           className="container mx-auto bg-white bg-opacity-90 rounded-3xl shadow-xl p-8"
         >
           <div className="md:hidden flex flex-col gap-10">
-            <h1 className="text-4xl font-semibold text-indigo-900">Contact Us</h1>
+            <h2 className="text-4xl font-semibold text-indigo-900">Contact Us</h2>
             <p className="text-slate-700 text-lg">
               Fill out the form below, and we’ll get in touch with you soon. We look forward to connecting!
             </p>
@@ -111,9 +111,9 @@ export default function ContactPage() {
 
           <div className="hidden md:grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <h1 className="text-5xl md:text-6xl font-semibold text-indigo-900 mb-6">
+              <h2 className="text-5xl md:text-6xl font-semibold text-indigo-900 mb-6">
                 Contact Us
-              </h1>
+              </h2>
               <p className="text-slate-700 text-lg mb-10 pt-2">
                 Fill out the form below, and we’ll get in touch with you soon. We look forward to connecting!
               </p>
