@@ -50,7 +50,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Search Console Verification - replace with your code from Search Console */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="https://rakshittherapist.vercel.app/favicon.svg" />
         <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
         {/* SEO Meta Tags */}
         <meta name="description" content="Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma." />
