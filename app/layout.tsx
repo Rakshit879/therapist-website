@@ -15,15 +15,15 @@ export const metadata: Metadata = {
   description:
     "Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma. Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to thrive.",
   alternates: {
-    canonical: "https://dr-serena-blake-lovat.vercel.app", 
+    canonical: "https://serena-blake-doctor.vercel.app", 
   },
   openGraph: {
     title: "Dr. Serena Blake — Therapy & Counseling",
     description: "Professional therapy to help you heal, grow, and thrive.",
-    url: "https://dr-serena-blake-lovat.vercel.app",
+    url: "https://serena-blake-doctor.vercel.app",
     images: [
       {
-        url: "https://dr-serena-blake-lovat.vercel.app/Images/Logo.png", 
+        url: "https://serena-blake-doctor.vercel.app/Images/Logo.png", 
         width: 1200,
         height: 630,
         alt: "Dr. Serena Blake — Therapist",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Dr. Serena Blake",
     description:
       "Compassionate mental health therapy for anxiety, depression, and more.",
-    images: ["https://dr-serena-blake-lovat.vercel.app/Images/Logo.png"],
+    images: ["https://serena-blake-doctor.vercel.app/Images/Logo.png"],
   },
   robots: {
     index: true,
@@ -49,7 +49,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Search Console Verification - replace with your code from Search Console */}
+  {/* Google Search Console Verification - replace with your code from Search Console */}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
         {/* SEO Meta Tags */}
         <meta name="description" content="Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma." />
@@ -57,13 +58,13 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Dr. Serena Blake — Therapist for Anxiety, Depression, Relationships" />
         <meta property="og:description" content="Professional therapy to help you heal, grow, and thrive." />
-  <meta property="og:image" content="https://dr-serena-blake-lovat.vercel.app/Images/Logo.png" />
+  <meta property="og:image" content="https://serena-blake-doctor.vercel.app/Images/Logo.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dr-serena-blake-lovat.vercel.app" />
+  <meta property="og:url" content="https://serena-blake-doctor.vercel.app" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dr. Serena Blake" />
   <meta name="twitter:description" content="Compassionate mental health therapy for anxiety, depression, and more." />
-  <meta name="twitter:image" content="https://dr-serena-blake-lovat.vercel.app/Images/Logo.png" />
+  <meta name="twitter:image" content="https://serena-blake-doctor.vercel.app/Images/Logo.png" />
         <Script
           id="ld-json"
           type="application/ld+json"
@@ -72,8 +73,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MedicalBusiness",
               name: "Dr. Serena Blake",
-              url: "https://dr-serena-blake-lovat.vercel.app",
-              logo: "https://dr-serena-blake-lovat.vercel.app/favicon.ico",
+              url: "https://serena-blake-doctor.vercel.app",
+              logo: "https://serena-blake-doctor.vercel.app/favicon.ico",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Los Angeles",
